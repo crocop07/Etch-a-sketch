@@ -1,0 +1,10 @@
+#square-container{
+    width:100%;
+    display:flex;
+    flex-wrap: wrap;
+}
+
+.box{
+    border-style:solid ;
+    border-color: black;
+}
