@@ -1,10 +1,18 @@
 #square-container{
-    width:100%;
+    width: 600px;
+    height: 6   00px;
     display:flex;
     flex-wrap: wrap;
+    gap: 10px;
+    margin: 20px auto;
+
 }
 
 .box{
+    width: 25px; 
+    height:25px;
     border-style:solid ;
     border-color: black;
-}
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+}   

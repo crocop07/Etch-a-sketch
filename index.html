@@ -15,11 +15,15 @@
         squareContainer.id = "square-container"; //Assigned ID for whole container
         document.body.appendChild(squareContainer);
 
+        const gridSize = 16;
+        const totalBoxes = gridSize * gridSize;
+
         //create 16 boxes
-        for(let i = 0; i<16; i++){
+        for(let i = 0; i<totalBoxes; i++){
             const newBox = document.createElement("div");
             newBox.classList.add("box"); //Add class to style the boxes
-            squareContainer.appendChild(newBox);
+            squareContainer.appendChild(newBox); //append new box to container
+            newBox.addEventListener("mouseover", (e) =>{newBox.style.backgroundColor = 'grey'});
         }
     </script>
 </body>
