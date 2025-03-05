@@ -11,16 +11,21 @@
 
 
     <script>
-        squareContainer = document.createElement("div");
-        squareContainer.id = "square-container"; //Assigned ID for whole container
-        document.body.appendChild(squareContainer);
 
-        let gridSize = 16;
-        
+        mainContainer = document.createElement("div");
+        mainContainer.id="main-container";
+        document.body.append(mainContainer);
 
         buttonContainer = document.createElement("div");
         buttonContainer.id = "button-container";
-        document.body.appendChild(buttonContainer);
+        mainContainer.appendChild(buttonContainer);
+
+        squareContainer = document.createElement("div");
+        squareContainer.id = "square-container"; 
+        mainContainer.appendChild(squareContainer);
+
+        let gridSize = 16;
+        
 
         selectSize = document.createElement("button");
         selectSize.textContent="Click here";

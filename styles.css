@@ -1,8 +1,17 @@
+#main-container {
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center children horizontally */
+    gap: 20px; /* Space between button container and square container */
+    padding: 20px; /* Add some padding */
+}
+
 #square-container{
     display:flex;
     flex-wrap: wrap;
     width:500px;
     height:500px;
+    border: 1px solid #7a6b6b;
 
 }
 
@@ -17,4 +26,6 @@
 #button-container{
     display:flex;
     justify-content: flex-start;
+    align-items: center;
+    border: 1px solid #7a6b6b;
 }
