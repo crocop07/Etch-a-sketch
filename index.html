@@ -12,47 +12,43 @@
 
     <script>
 
-        mainContainer = document.createElement("div");
+       const mainContainer = document.createElement("div");
         mainContainer.id="main-container";
         document.body.append(mainContainer);
 
-        buttonContainer = document.createElement("div");
+        const buttonContainer = document.createElement("div");
         buttonContainer.id = "button-container";
         mainContainer.appendChild(buttonContainer);
 
-        squareContainer = document.createElement("div");
+        const squareContainer = document.createElement("div");
         squareContainer.id = "square-container"; 
         mainContainer.appendChild(squareContainer);
 
         let gridSize = 16;
         
+        createBoxes(); //run function initially with 16
 
         selectSize = document.createElement("button");
         selectSize.textContent="Click here";
         selectSize.addEventListener("click", (e) => {
             gridSize = parseInt(prompt("enter the number of boxes"));
-
-           if(gridSize <=100 && gridSize > 0) {
             createBoxes();
-           } else {
-            return alert("Number must be between 1-100");
-           }
+           
         });
         buttonContainer.appendChild(selectSize);
 
         resetBtn = document.createElement("button");
         resetBtn.textContent ="Reset";
-        resetBtn.addEventListener("click", () => createBoxes());
+        resetBtn.addEventListener("click", () => resetGrid());
         buttonContainer.appendChild(resetBtn);
 
         function createBoxes() {
+            if(gridSize <=100 && gridSize > 0) {
             squareContainer.innerHTML = ""; //deletes previous boxes
             const boxSize = 500 / gridSize;
             const totalBoxes = gridSize * gridSize;
-            
-            
 
-        for(let i = 0; i<totalBoxes; i++){
+            for(let i = 0; i<totalBoxes; i++){
             const newBox = document.createElement("div");
             newBox.classList.add("box"); //Add class to style the boxes
             newBox.style.width = `${boxSize}px`;
@@ -60,6 +56,15 @@
             squareContainer.appendChild(newBox); //append new box to container
             newBox.addEventListener("mouseover", (e) =>{newBox.style.backgroundColor = 'grey'});
          }
+            
+           } else {
+            return alert("Number must be between 1-100");
+           }
+            
+            
+            
+
+       
          }
 
          function resetGrid(){
